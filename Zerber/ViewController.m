@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "JKNavigationBar.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Set Bar Button
+    UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithTitle:@"save" style:UIBarButtonItemStyleBordered target:self action:nil];
+    self.navigationItem.rightBarButtonItem = barBtn;
+    barBtn = nil;
+    
+    // Usage Here
+    JKNavigationBar *jkBar = (JKNavigationBar*) self.navigationController.navigationBar;
+    [jkBar setBackgroundImage:[UIImage imageNamed:@"NavBarBG.jpg"]];
+    [jkBar setBackgroundColor:[UIColor blueColor]];
+    
+    
 }
 
 - (void)viewDidUnload
